@@ -1,0 +1,13 @@
+region                = "us-east-1"
+vpc-cidr              = "10.0.0.0/16"
+public_subnet_1_cidr  = "10.0.1.0/24"
+public_subnet_2_cidr  = "10.0.2.0/24"
+public_subnet_3_cidr  = "10.0.3.0/24"
+private_subnet_1_cidr = "10.0.4.0/24"
+private_subnet_2_cidr = "10.0.5.0/24"
+private_subnet_3_cidr = "10.0.6.0/24"
+ecs_cluster_name      = "ecs-fargate-todo-app-cluster"
+ecs_service_name      = "ecs-fargate-todo-app-service"
+memory = 512
+desired_task_number = 1
+docker_image_url = "132583014467.dkr.ecr.us-east-1.amazonaws.com/todo-app:v1"
