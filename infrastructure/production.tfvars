@@ -10,4 +10,4 @@ ecs_cluster_name      = "ecs-fargate-todo-app-cluster"
 ecs_service_name      = "ecs-fargate-todo-app-service"
 memory = 512
 desired_task_number = 1
-docker_image_url = "132583014467.dkr.ecr.us-east-1.amazonaws.com/todo-app:v1"
+docker_image_url = "<AWS_Account_ID>.dkr.ecr.us-east-1.amazonaws.com/todo-app:latest"
