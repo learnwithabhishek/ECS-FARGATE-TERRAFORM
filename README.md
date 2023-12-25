@@ -1,25 +1,30 @@
-# node-todo-app creation & deployment on ecs fargate cluster using terraform
+# node-todo-app creation & deployment on ecs fargate cluster using terraform #
 
-# Steps:
-Create a ecr repository "todo-app"
+## Steps :
 
-Build docker image and tag with ecr repo name
-docker build -t <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com/todo-app:latest .
+- Create a ecr repository "todo-app"
 
-Authenticate your docker client to ecr registory:
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com
+- Build docker image and tag with ecr repo name
+  - docker build -t <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com/todo-app:latest .
 
-Run the following command to push this image to your newly created AWS repository:
-docker push <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com/todo-app:latest
+- Authenticate your docker client to ecr registory:
+  - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com
 
-Move to infrastructure directory, it contains terraform files.
+- Run the following command to push this image to your newly created AWS repository:
+  - docker push <AWS_Account_Id>.dkr.ecr.us-east-1.amazonaws.com/todo-app:latest
 
-Create a S3 bucket in your aws account and save it's name in infrastructure-prod.config file.
+- Move to infrastructure directory, it contains terraform files.
 
-Now run terraform commands to create the infra:
+- Create a S3 bucket in your aws account and save it's name in infrastructure-prod.config file.
 
-terraform init -backend-config="infrastructure-prod.config"
+- *Now run terraform commands to create the infra:*
 
-terraform plan -var-file="production.tfvars"
+  - terraform init -backend-config="infrastructure-prod.config"
 
-terraform apply -var-file="production.tfvars" -auto-approve
+  - terraform plan -var-file="production.tfvars"
+
+  - terraform apply -var-file="production.tfvars" -auto-approve
+
+😀 🖥
+
+![image](https://github.com/learnwithabhishek/ECS-FARGATE-TERRAFORM/assets/110404399/720d749d-ecd3-4870-a15d-7ad34b7e5af7)
